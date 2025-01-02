@@ -1,101 +1,84 @@
+"use client";
+
 import Image from "next/image";
+import RulesModal from "./components/rules-modal";
+import { useState } from "react";
+import "@fontsource/barlow/700.css";
+import "@fontsource/barlow/600.css";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [score, setScore] = useState(0);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="min-h-screen flex items-center justify-evenly flex-col ">
+      <div className="border-2 border-[hsl(217, 16%, 45%)] rounded-xl p-4 flex space-between w-1/2 justify-between">
+        <div>
+          <h2>ROCK</h2>
+          <h2>PAPER</h2>
+          <h2>SCISSORS</h2>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="border bg-white rounded-xl text-center py-2 px-6">
+          <h3 className="text-[hsl(229, 64%, 46%)]">SCORE</h3>
+          <h1 className="text-[hsl(229, 25%, 31%)] text-5xl font-bold">
+            {score}
+          </h1>
+        </div>
+      </div>
+      <div className="relative">
+        <Image
+          className="absolute mx-auto left-0 right-0 text-center z-0 bottom-12"
+          src={`/bg-triangle.svg`}
+          width={400}
+          height={300}
+          alt={"Triangle"}
+        />
+        <div className="grid grid-cols-12 grid-rows-3 z-10 relative">
+          <button className="col-span-4 rounded-full paper p-4 flex items-center shadow-inner">
+            <div className="bg-white rounded-full w-[125px] h-[125px] flex justify-center items-center shadow-inner shadow-slate-500">
+              <Image
+                className="rounded-full"
+                src={`/icon-paper.svg`}
+                alt="Paper"
+                width={60}
+                height={100}
+              />
+            </div>
+          </button>
+          <div className="col-span-4 flex justify-center items-center invisible">
+            Beats
+          </div>
+          <button className="col-span-4 rounded-full scissors p-4 flex items-center shadow-inner">
+            <div className="bg-white rounded-full w-[125px] h-[125px] flex justify-center items-center shadow-inner shadow-slate-500">
+              <Image
+                className="rounded-full p-6"
+                src={`/icon-scissors.svg`}
+                alt="Scissors"
+                width={100}
+                height={100}
+              />
+            </div>
+          </button>
+          <div className="col-span-3 col-start-3 flex justify-center items-center invisible">
+            Beats
+          </div>
+          <div className="col-span-3 col-start-9 flex justify-center items-center invisible">
+            Beats
+          </div>
+          <button className="col-span-4 col-start-5 rounded-full rock p-4 flex items-center shadow-inner">
+            <div className="bg-white rounded-full w-[125px] h-[125px] flex justify-center items-center shadow-inner shadow-slate-500">
+              <Image
+                className="rounded-full p-6"
+                src={`/icon-rock.svg`}
+                alt="Rock"
+                width={100}
+                height={100}
+              />
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <RulesModal />
     </div>
   );
 }
