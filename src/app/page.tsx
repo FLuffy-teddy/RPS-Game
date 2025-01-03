@@ -34,7 +34,7 @@ export default function Home() {
         />
         <div className="grid grid-cols-12 grid-rows-3 z-10 relative">
           <button className="col-span-4 rounded-full paper p-4 flex items-center shadow-inner">
-            <div className="bg-white rounded-full w-[125px] h-[125px] flex justify-center items-center shadow-inner shadow-slate-500">
+            <div className="rounded-full w-[125px] h-[125px] flex justify-center items-center shadow-inner shadow-slate-500">
               <Image
                 className="rounded-full"
                 src={`/icon-paper.svg`}
@@ -48,7 +48,7 @@ export default function Home() {
             Beats
           </div>
           <button className="col-span-4 rounded-full scissors p-4 flex items-center shadow-inner">
-            <div className="bg-white rounded-full w-[125px] h-[125px] flex justify-center items-center shadow-inner shadow-slate-500">
+            <div className="rounded-full w-[125px] h-[125px] flex justify-center items-center shadow-inner shadow-slate-500">
               <Image
                 className="rounded-full p-6"
                 src={`/icon-scissors.svg`}
@@ -65,7 +65,7 @@ export default function Home() {
             Beats
           </div>
           <button className="col-span-4 col-start-5 rounded-full rock p-4 flex items-center shadow-inner">
-            <div className="bg-white rounded-full w-[125px] h-[125px] flex justify-center items-center shadow-inner shadow-slate-500">
+            <div className="rounded-full w-[125px] h-[125px] flex justify-center items-center shadow-inner shadow-slate-500">
               <Image
                 className="rounded-full p-6"
                 src={`/icon-rock.svg`}

@@ -42,18 +42,39 @@ body {
 .rock {
   background: linear-gradient(var(--rock-bg-from), var(--rock-bg-to));
 }
-
+.rock div {
+  background: white;
+  transition: 0.5s;
+}
+.rock div:hover {
+  background: yellow;
+}
 .paper {
   background: linear-gradient(var(--paper-bg-from), var(--paper-bg-to));
 }
-
+.paper div {
+  background: white;
+  transition: 0.5s;
+}
+.paper div:hover {
+  background: yellow;
+}
 .scissors {
   background: linear-gradient(var(--scissors-bg-from), var(--scissors-bg-to));
 }
-
+.scissors div {
+  background: white;
+  transition: 0.5s;
+}
+.scissors div:hover {
+  background: yellow;
+}
 h3 {
   color: var(--score-text);
 }
 h1 {
+  color: var(--dark-text);
+}
+.h1 {
   color: var(--dark-text);
 }
